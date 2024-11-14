@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in Automático</title>
+    <link rel="stylesheet" href="Assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-img {
+            object-fit: cover;
+            transition: none;
+        }
+        .card-img:hover {
+            transform: none;
+        }
+        .card {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .content-container .card {
+            width: 48%;
+        }
+        .content-container .form-container {
+            width: 48%;
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-container a {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .form-container a:hover {
+            text-decoration: none;
+        }
+        /* Imagen pegada al navbar */
+        .navbar + .image-container img {
+            width: 100%;
+            margin-top: 0;
+        }
+        /* Alineación del botón Buscar a la derecha */
+        .form-container .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container d-flex justify-content-between align-items-center full-width">
+                <div class="navbar-left d-flex align-items-center">
+                    <a class="navbar-brand text-white font-weight-bold" href="index.html">
+                        <img src="Assets/Img/Logotipo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                        Gallinas Airlines
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mis viajes
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="pagina-no-disponible.html">Administrar mis viajes</a>
+                                <a class="dropdown-item" href="Check-in.html">Check-in</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Centro de ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="navbar-right d-flex align-items-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Estado de vuelo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold login-link" href="pagina-no-disponible.html">Iniciar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!-- Imagen pegada al navbar -->
+    <div class="image-container">
+        <img src="Assets/Img/Banner.jpg" alt="Imagen vuelo Madrid" class="img-fluid">
+    </div>
+
+    <!-- Contenedor con tarjeta y formulario -->
+    <div class="container content-container">
+        <!-- Tarjeta con información sobre el Check-in automático -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ahora tenemos Check-in automático en Chile</h5>
+                <p class="card-text">Si compraste un viaje nacional en nuestra nueva experiencia ¡Tu Check-in estará listo!</p>
+                <p class="card-text">Si compraste tus pasajes en agencias de viajes u otros sitios web, o tu vuelo es internacional, debes completar los datos de tu viaje desde 48 horas antes del vuelo para activar tu Check-in automático.</p>
+                <p class="card-text">¡Ahora solo deberás preocuparte de disfrutar tu destino!</p>
+                <a href="check-in-automatico.html" class="text-primary">Infórmate sobre el Check-in Automático</a>
+            </div>
+        </div>
+
+        <!-- Formulario para búsqueda de viaje -->
+        <div class="form-container">
+            <h5>Busca tu viaje</h5>
+            <p>Accede a tu viaje, ingresando los siguientes datos:</p>
+            <form>
+                <div class="form-group">
+                    <label for="orderCode">Nº Orden / Código reserva</label>
+                    <input type="text" class="form-control" id="orderCode" placeholder="Ingresa el número de orden o código de reserva">
+                    <small><a href="#" onclick="window.open('donde-encontrar.html', '_blank')">¿Dónde encontrarlos?</a></small>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido de pasajero</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Ingresa uno o dos apellidos igual como lo escribiste al comprar tu pasaje">
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 text-center">
+                    <p class="footer-text">© 2024 Gallinas Airlines. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

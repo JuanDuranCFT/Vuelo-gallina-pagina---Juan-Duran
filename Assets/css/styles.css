@@ -1,0 +1,197 @@
+/* Estilo de la barra de navegación */
+.custom-navbar {
+    background-color: #180353;
+    justify-content: center;
+    position: relative;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: white;
+    position: relative;
+    padding: 8px 15px;
+}
+
+/* Estilo de barra para "Mis viajes" y "Centro de ayuda" */
+.navbar-left .nav-link:hover, 
+.navbar-right .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+/* Línea blanca recta debajo de "Estado de vuelo" y "Acerca de" */
+.navbar-right .nav-item .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar-right .nav-item .nav-link:hover {
+    border-bottom: 2px solid white; /* Línea recta */
+    background-color: transparent; /* Elimina el fondo */
+    border-radius: 0; /* Asegura que no haya bordes redondeados */
+}
+
+/* Estilo para el enlace "Iniciar sesión" con borde blanco que aparece al hacer hover */
+.login-link {
+    position: relative;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Barra blanca */
+    border-radius: 20px; /* Esquinas redondeadas */
+    border: 2px solid transparent; /* Inicialmente sin borde */
+    transition: all 0.3s ease; /* Transición suave para el borde y fondo */
+    box-sizing: border-box; /* Asegura que el borde redondeado se aplique correctamente */
+}
+
+/* Borde blanco con esquinas redondeadas al pasar el cursor sobre "Iniciar sesión" */
+.login-link:hover {
+    border: 2px solid white; /* Borde blanco al hacer hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Mantener fondo transparente */
+    border-radius: 20px; /* Esquinas redondeadas */
+}
+
+/* Contenedor de la imagen */
+.image-container {
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin-top: -10px; /* Ajusta ligeramente hacia arriba para que no haya espacio entre el navbar y la imagen */
+}
+
+/* Estilo de la imagen */
+.rounded-image {
+    width: 80%; /* Ajusta el tamaño de la imagen, puedes cambiar el valor según tu necesidad */
+    max-width: 1200px; /* Limita el ancho máximo de la imagen */
+    border-bottom-left-radius: 20px; /* Esquina inferior izquierda redondeada */
+    border-bottom-right-radius: 20px; /* Esquina inferior derecha redondeada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil a la imagen */
+}
+
+
+/* Efecto para los items del dropdown */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+/* Separación entre los grupos de enlaces */
+.navbar-left {
+    margin-right: auto;
+}
+
+.navbar-right {
+    margin-left: auto;
+}
+
+/* Estilo para las tarjetas de vuelo */
+.card {
+    max-width: 600px; /* Limitar el ancho de las tarjetas */
+    margin: 0 auto; /* Centrar las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de fondo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto hover para las tarjetas SOLO en la página de index */
+.index-page .card:hover {
+    transform: scale(1.05); /* Efecto de acercamiento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+    border: 2px solid #4B0082; /* Borde morado oscuro al hacer hover */
+}
+
+/* Estilo de las imágenes dentro de las tarjetas */
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.card-body {
+    padding: 20px;
+}
+
+/* Aumenta el tamaño de las tarjetas */
+.card {
+    max-width: 900px; /* Incrementa el ancho máximo de las tarjetas */
+    margin: 20px auto; /* Centra las tarjetas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más grande */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajusta las imágenes dentro de las tarjetas */
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Aumenta el padding de las tarjetas */
+.card-body {
+    padding: 30px; /* Aumenta el espacio interno */
+}
+
+/* Títulos de las tarjetas más grandes */
+.card-title {
+    font-size: 1.5rem; /* Títulos más grandes */
+}
+
+/* Texto dentro de la tarjeta */
+.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Estilo para el pie de página */
+.footer {
+    background-color: white; /* Fondo blanco */
+    padding: 20px 0; /* Espaciado superior e inferior */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil en la línea de corte */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Texto centrado */
+.footer-text {
+    margin: 0;
+    font-size: 1rem;
+    color: #333; /* Color del texto */
+}
+
+/* Asegura que el pie de página se ajuste a todo el ancho en pantallas pequeñas */
+.footer .container {
+    max-width: 100%;
+}
+
+/* Estilos de la tarjeta de información */
+.info-card {
+    border-radius: 10px;
+    border: 1px solid #4B0082; /* Color del borde */
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+/* Botones */
+.info-card .btn {
+    border-radius: 8px;
+}
+
+.btn-info {
+    background-color: #4B0082; /* Color del botón "Más información" */
+}
+
+.btn-primary {
+    background-color: #4B0082; /* Color del botón "Continuar" */
+}
+
+/* Pie de página */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.footer-text {
+    color: #6c757d;
+    margin: 0;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Vuelo a Madrid</title>
+    <link rel="stylesheet" href="Assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-img {
+            object-fit: cover;
+            transition: none;
+        }
+        .card-img:hover {
+            transform: none;
+        }
+        .card {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container d-flex justify-content-between align-items-center full-width">
+                <div class="navbar-left d-flex align-items-center">
+                    <a class="navbar-brand text-white font-weight-bold" href="index.html">
+                        <img src="Assets/Img/Logotipo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                        Gallinas Airlines
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mis viajes
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="pagina-no-disponible.html">Administrar mis viajes</a>
+                                <a class="dropdown-item" href="Check-in.html">Check-in</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Centro de ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="navbar-right d-flex align-items-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Estado de vuelo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold login-link" href="pagina-no-disponible.html">Iniciar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!-- Información seleccionada del vuelo en la barra -->
+    <div class="container my-4">
+        <div class="alert alert-info">
+            <strong>Información seleccionada:</strong>
+            <p id="flightInfo">Asientos: 1 Asiento, Equipaje: 5 kg, Pasajes: 1 Pasaje, Transfer: Sin transfer</p>
+        </div>
+    </div>
+
+    <!-- Centrado de la tarjeta -->
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="Assets/Img/Madrid.jpg" class="card-img" alt="Vuelo a Madrid">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Vuelo a Madrid</h5>
+                            <p class="card-text">Viaja a la capital española con Gallinas Airlines. Disfruta de un servicio de alta calidad durante tu vuelo.</p>
+
+                            <h5>Resumen de la selección:</h5>
+                            <p><strong>Asientos:</strong> <span id="selectedSeats">1 Asiento</span></p>
+                            <p><strong>Equipaje:</strong> <span id="selectedLuggage">5 kg</span></p>
+                            <p><strong>Cantidad de pasajes:</strong> <span id="selectedTickets">1 Pasaje</span></p>
+
+                            <!-- Transfer -->
+                            <h5>Transfer</h5>
+                            <select id="transferSelection" class="form-control">
+                                <option value="0">Sin transfer</option>
+                                <option disabled="7000">Transfer estándar (+ $7,000)</option>
+                                <option disabled="15000">Transfer VIP (+ $15,000)</option>
+                            </select>
+
+                            <h4>Total: $<span id="totalPrice">12,000</span> CLP</h4>
+                            <!-- Redirección dentro del botón -->
+                            <button id="payButton" class="btn btn-success" onclick="window.location.href='pagina-de-pago.html';">Pagar Vuelo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 text-center">
+                    <p class="footer-text">© 2024 Gallinas Airlines. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script personalizado para manejar la selección y mostrar el precio -->
+    <script>
+        const basePrice = 12000;
+
+        function updateFlightInfo() {
+            const seatPrice = parseInt(document.getElementById("seatSelection")?.value) || 0;
+            const luggagePrice = parseInt(document.getElementById("luggageSelection")?.value) || 0;
+            const ticketPrice = parseInt(document.getElementById("ticketQuantity")?.value) || 0;
+            const transferPrice = parseInt(document.getElementById("transferSelection")?.value) || 0;
+
+            const totalPrice = basePrice + seatPrice + luggagePrice + ticketPrice + transferPrice;
+
+            const seatText = document.getElementById("seatSelection")?.selectedOptions[0].text || '1 Asiento';
+            const luggageText = document.getElementById("luggageSelection")?.selectedOptions[0].text || '5 kg';
+            const ticketText = document.getElementById("ticketQuantity")?.selectedOptions[0].text || '1 Pasaje';
+            const transferText = document.getElementById("transferSelection")?.selectedOptions[0].text || 'Sin transfer';
+
+            // Actualizamos el contenido de flightInfo
+            document.getElementById("flightInfo").textContent = `Asientos: ${seatText}, Equipaje: ${luggageText}, Pasajes: ${ticketText}, Transfer: ${transferText}`;
+
+            document.getElementById("selectedSeats").textContent = seatText;
+            document.getElementById("selectedLuggage").textContent = luggageText;
+            document.getElementById("selectedTickets").textContent = ticketText;
+
+            // Actualizamos el total con el precio final
+            document.getElementById("totalPrice").textContent = totalPrice.toLocaleString();
+        }
+
+        // Añadir escuchadores para los cambios en los select
+        document.getElementById("seatSelection")?.addEventListener("change", updateFlightInfo);
+        document.getElementById("luggageSelection")?.addEventListener("change", updateFlightInfo);
+        document.getElementById("ticketQuantity")?.addEventListener("change", updateFlightInfo);
+        document.getElementById("transferSelection")?.addEventListener("change", updateFlightInfo);
+
+        // Llamada inicial a la función para establecer los valores iniciales
+        updateFlightInfo();
+    </script>
+</body>
+</html>

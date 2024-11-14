@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallinas Airlines</title>
+    <link rel="stylesheet" href="Assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos adicionales para el efecto de zoom en las tarjetas */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Efecto de zoom */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+        }
+
+        /* Ajusta el tamaño de la imagen dentro de las tarjetas */
+        .card-img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Elimina el subrayado de los enlaces dentro de las tarjetas */
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container d-flex justify-content-between align-items-center full-width">
+            <div class="navbar-left d-flex align-items-center">
+                <a class="navbar-brand text-white font-weight-bold" href="index.html">
+                    <img src="Assets/Img/Logotipo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                    Gallinas Airlines
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mis viajes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="pagina-no-disponible.html">Administrar mis viajes</a>
+                            <a class="dropdown-item" href="Check-in.html">Check-in</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Centro de ayuda</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-right d-flex align-items-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Estado de vuelo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white font-weight-bold" href="pagina-no-disponible.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white font-weight-bold login-link" href="pagina-no-disponible.html">
+                            Iniciar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Imagen debajo del navbar -->
+    <div class="image-container">
+        <img src="Assets/Img/Banner.jpg" alt="Imagen principal" class="rounded-image">
+    </div>
+
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <!-- Tarjeta 1 -->
+            <a href="Vuelo-madrid.html" class="col-md-10 mb-4" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="Assets/Img/Madrid.jpg" class="card-img" alt="Vuelo 1">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Vuelo a Madrid</h5>
+                                <p class="card-text">Disfruta de un vuelo cómodo y seguro a Madrid, con todos los servicios a bordo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+    
+            <!-- Tarjeta 2 -->
+            <a href="pagina-no-disponible.html" class="col-md-10 mb-4" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="Assets/Img/Paris.jpg" class="card-img" alt="Vuelo 2">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Vuelo a París</h5>
+                                <p class="card-text">Vuela a la ciudad de la luz con total confort y un servicio exclusivo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+    
+            <!-- Tarjeta 3 -->
+            <a href="pagina-no-disponible.html" class="col-md-10 mb-4" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="Assets/Img/New York.jpg" class="card-img" alt="Vuelo 3">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Vuelo a Nueva York</h5>
+                                <p class="card-text">Vuela a la gran manzana con una experiencia de vuelo de primera clase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 text-center">
+                    <p class="footer-text">© 2024 Gallinas Airlines. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
